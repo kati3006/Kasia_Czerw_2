@@ -100,7 +100,7 @@ public class TrelloClientTest {
     public void shouldReturnEmptyList() throws URISyntaxException {
 
         //Given
-        URI url = new URI("http://test.com/members/mikepolak5/boards?key=test&token=test&fields=name,id&lists=all");
+        URI url = new URI("http://test.com/members/kati3006/boards?key=test&token=test&fields=name,id&lists=all");
 
         when(restTemplate.getForObject(url, TrelloBoardDto[].class)).thenReturn(null);
 
