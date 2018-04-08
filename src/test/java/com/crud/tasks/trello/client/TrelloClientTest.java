@@ -66,7 +66,7 @@ public class TrelloClientTest {
     }
 
     @Test
-    public void shouldCreateCard() {
+    public void shouldCreateCard() throws URISyntaxException {
         // Given
         TrelloCardDto trelloCardDto = new TrelloCardDto(
                 "Test task",
@@ -80,13 +80,19 @@ public class TrelloClientTest {
         CreatedTrelloCard createdTrelloCard = new CreatedTrelloCard(
                 "1",
                 "Test task",
-                "http://test.com"
+                "http://test.com",
+                null
         );
+
+        when(restTemplate.postForObject(uri, null, CreatedTrelloCard.class)).thenReturn(createdTrelloCard);
 
         // When
         CreatedTrelloCard newCard = trelloClient.createNewCard(trelloCardDto);
 
         // Then
+        Assert.assertEquals("1", newCard.getId());
+        Assert.assertEquals("Test task", newCard.getName());
+        Assert.assertEquals("http://test.com", newCard.getShortUrl());
 
     }
 }
