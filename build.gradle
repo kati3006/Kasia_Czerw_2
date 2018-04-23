@@ -46,5 +46,5 @@ dependencies {
 //	dla Tomcat
 //	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
-
+	compile('org.springframework.boot:spring-boot-starter-mail:1.5.7.RELEASE')
 }
