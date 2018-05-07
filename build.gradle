@@ -43,4 +43,6 @@ dependencies {
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    compile('com.google.code.gson:2.8.2')
 }
