@@ -6,19 +6,19 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Getter
+
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name="task")
+@Getter
+@Entity(name = "tasks")
 public class Task {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String title;
 
-    @Column(name="description")
+    @Column(name = "description")
     private String content;
 }
